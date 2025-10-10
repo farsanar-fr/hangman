@@ -161,7 +161,10 @@ $(".keys").click(function (e) {
   let letter = e.target.textContent.toLowerCase();
   console.log(letter);
   let ind = tWord.indexOf(letter);
-
+console.log("inside callback");
+  console.log(tWord+"tWord");
+  console.log(temp+"temp");
+  console.log(word+"word");
   let indices = [];
 
   console.log("INDICES" + indices);
