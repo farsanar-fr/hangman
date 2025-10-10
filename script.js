@@ -162,12 +162,8 @@ function startGame() {
     console.log("INDICES" + indices);
 
     for (let i = 0; i < tWord.length; i++) {
-      if (ind > -1) {
-        indices.push(ind);
-        ind = tWord.indexOf(letter, ind + 1);
-      }
-      if (ind == -1) {
-        break;
+      if (tWord[i] == letter) {
+        indices.push(i);
       }
     }
     console.log("after for INDICES" + indices);
@@ -205,11 +201,13 @@ function startGame() {
       $(e.target).prop("disabled", true);
       if (attempt > 6) {
         $(".msg h2").text("GAME OVER");
+        // $(".msg h2").after("<h4>Score :" + score + "</h2");
         score = 0;
         $(".msg").removeClass("win");
         $(".msg").addClass("fail");
 
         $(".msg").show();
+       
         $(".overlay").show();
         $("img").attr("src", "./images/last.jpg");
       } else {
@@ -224,6 +222,7 @@ function startGame() {
 
       // $(".keys").prop("disabled", true);
       $(".msg h2").text("YOU WON");
+      // $(".msg h2").after("<h4>Score " + score + "</h2");
       $(".msg").removeClass("fail");
       $(".msg").addClass("win");
 
@@ -231,6 +230,7 @@ function startGame() {
       setTimeout(() => {
         $(".msg").show();
       }, 500);
+      
       $(".overlay").show();
     }
   });
@@ -238,6 +238,7 @@ function startGame() {
 $(".rst").click(function () {
   $(".keys").prop("disabled", false);
   $(".msg").hide();
+  
   $(".overlay").hide();
   $(".keys").removeClass("btn-danger");
   $(".keys").removeClass("btn-success");
