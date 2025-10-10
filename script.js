@@ -143,11 +143,11 @@ function startGame(){
 
 
 
-let temp;
-let attempt = 1;
-let word = wordList[generateNum(wordList)].toLowerCase().replaceAll(" ","");
+var temp;
+var attempt = 1;
+var word = wordList[generateNum(wordList)].toLowerCase().replaceAll(" ","");
 console.log(word);
-let tWord = word;
+var tWord = word;
 for (let i = 0; i < tWord.length / 2 + 1; i++) {
   temp = word.replace(word[generateNum(word)], "_");
   word = temp;
