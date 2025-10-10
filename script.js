@@ -157,7 +157,7 @@ console.log(temp);
 $(".word").text(temp);
 //temp="strawberry"
 
-$(".keys").click(function (e) {
+$(".keys").on("click",function (e) {
   let letter = e.target.textContent.toLowerCase();
   console.log(letter);
   let ind = tWord.indexOf(letter);
@@ -257,6 +257,7 @@ $(".rst").click(function () {
   $('.keys').removeClass("btn-success");
   $('.keys').addClass("btn-custom");
   $("img").attr("src", "./images/0.jpg");
+  $(".keys").off("click");
   startGame();
 
 });
