@@ -141,9 +141,7 @@ function startGame(){
       '<i class="fa-solid fa-trophy">'+score+'</i>'
     );
 
-$(".keys").click(function (e) {
-  console.log(e.target.textContent.toLowerCase());
-});
+
 
 let temp;
 let attempt = 1;
