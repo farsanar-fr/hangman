@@ -129,17 +129,15 @@ function startGame() {
   $(".hint").click(() => {
     $(".hint p").show();
   });
-  // let wordList=["apple","orange","grapes","pomegranate","pineapple","mango","cherry",  "papaya","watermelon","blueberry","strawberry"];
-  but = $(".keys");
-  console.log(but);
+  
 
   $(".score h4").html('<i class="fa-solid fa-trophy">' + score + "</i>");
 
-  var temp;
-  var attempt = 1;
-  var word = wordList[generateNum(wordList)].toLowerCase().replaceAll(" ", "");
+  let temp;
+  let attempt = 1;
+  let word = wordList[generateNum(wordList)].toLowerCase().replaceAll(" ", "");
   console.log(word);
-  var tWord = word;
+  let tWord = word;
   for (let i = 0; i < tWord.length / 2 + 1; i++) {
     temp = word.replace(word[generateNum(word)], "_");
     word = temp;
@@ -200,8 +198,8 @@ function startGame() {
       $(".score h4").html('<i class="fa-solid fa-trophy">' + score + "</i>");
       $(e.target).prop("disabled", true);
       if (attempt > 6) {
-        $(".msg h2").text("GAME OVER");
-        // $(".msg h2").after("<h4>Score :" + score + "</h2");
+        $(".msg h2").text("GAME OVER \n Score:"+score);
+       // $(".msg h2").after("<h4>Score :" + score + "</h4>");
         score = 0;
         $(".msg").removeClass("win");
         $(".msg").addClass("fail");
@@ -218,11 +216,11 @@ function startGame() {
     console.log("result" + result);
 
     if (result && !result.includes("_")) {
-      console.log("Stop");
+      console.log("Stop",result);
 
       // $(".keys").prop("disabled", true);
-      $(".msg h2").text("YOU WON");
-      // $(".msg h2").after("<h4>Score " + score + "</h2");
+      $(".msg h2").text("YOU WON \n Score:"+score);
+      //$(".msg h2").after("<h4>Score " + score + "</h4>");
       $(".msg").removeClass("fail");
       $(".msg").addClass("win");
 
@@ -237,8 +235,7 @@ function startGame() {
 }
 $(".rst").click(function () {
   $(".keys").prop("disabled", false);
-  $(".msg").hide();
-  
+  $(".msg").hide();  
   $(".overlay").hide();
   $(".keys").removeClass("btn-danger");
   $(".keys").removeClass("btn-success");

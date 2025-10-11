@@ -1,30 +1,31 @@
-:root{
-  --body-color:black;
-  --game-color:blue;
-  --game-text:yellow;
-  --head-color:aqua;
-  --button-color:white;
-
-
+:root {
+  --body-color: black;
+  --game-color: rgba(0, 255, 255, 0.727);
+  --game-text: rgb(243, 243, 17);
+  --head-color: aqua;
+  --button-color: white;
 }
 body {
-  background-color:var(--body-color);
+  background-color: var(--body-color);
   color: var(--head-color);
   font-family: "Press Start 2P", system-ui;
 }
-.game-area,.welcome {
+.game-area,
+.welcome {
   width: 70%;
   height: 60%;
   background-color: var(--game-color);
-color: var(--game-text);
+  color: var(--game-text);
   position: relative;
   padding: 5%;
   border-radius: 5px;
 }
-.welcome button
-{
+.welcome button {
   text-align: center;
-
+}
+.btn:hover {
+  background-color: var(--game-text);
+  color: var(--body-color);
 }
 .msg {
   width: 30%;
@@ -36,23 +37,19 @@ color: var(--game-text);
   left: 30%;
   z-index: 4;
 }
-.hint
-{
+.hint {
   clear: both;
   font-family: "Caveat", cursive;
   font-size: large;
 }
-.hint p{
+.hint p {
   background-color: yellow;
   color: black;
-  
 }
-.win
-{
+.win {
   background-color: rgb(22, 150, 60);
 }
-.fail
-{
+.fail {
   background-color: red;
 }
 
@@ -79,20 +76,17 @@ color: var(--game-text);
   z-index: 3;
 }
 .keyboard {
-
   clear: both;
 }
 .btn-custom {
   background-color: var(--button-color);
 }
-.keys
-{
-   padding: 10px;
+.keys {
+  padding: 10px;
   width: 40px;
   margin-top: 30px;
 }
-.btn-wrong
-{
+.btn-wrong {
   background-color: red;
 }
 @media (max-width: 500px) {
@@ -114,6 +108,24 @@ color: var(--game-text);
   .keyboard {
     margin-top: 0;
   }
+  .msg
+  {
+    width: 50%;
+  }
+  .msg h2,.msg button
+  {
+    font-size: xx-small;
+    font-weight: 100;
+    
+  }
+}
+@media (max-width: 1200px) {
+  .word {
+    position: relative;
+  }
+  .keyboard {
+    margin-top: 0;
+  }
 }
 @media (max-width: 800px) {
   .game-area {
@@ -130,4 +142,9 @@ color: var(--game-text);
   .keyboard {
     margin-top: 0;
   }
+  .msg
+  {
+    width: 50%;
+  }
+ 
 }
