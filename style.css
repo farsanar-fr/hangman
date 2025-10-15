@@ -1,21 +1,27 @@
 :root {
   --body-color: black;
-  --game-color: rgba(0, 255, 255, 0.727);
+  --game-color: rgba(253, 253, 253, 0.35);
   --game-text: rgb(243, 243, 17);
-  --head-color: aqua;
+  --head-color: rgb(225, 255, 0);
   --button-color: white;
 }
 body {
+  height: 100vh;
   background-color: var(--body-color);
+  
   color: var(--head-color);
   font-family: "Press Start 2P", system-ui;
 }
 .game-area,
 .welcome {
+  
   width: 70%;
-  height: 60%;
+  
   background-color: var(--game-color);
+  
   color: var(--game-text);
+
+  box-shadow: 0 3rem 5rem rgba(244, 244, 244, 0.25);
   position: relative;
   padding: 5%;
   border-radius: 5px;
@@ -23,7 +29,12 @@ body {
 .welcome button {
   text-align: center;
 }
-
+.rst
+{
+  font-size: 300%;
+  color: var(--button-color);
+  cursor: pointer;
+}
 .msg {
   width: 30%;
   text-align: center;
@@ -33,6 +44,10 @@ body {
   top: 30%;
   left: 30%;
   z-index: 4;
+}
+.keys:disabled
+{
+  opacity:1;
 }
 .hint {
   clear: both;
