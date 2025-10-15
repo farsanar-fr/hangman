@@ -23,10 +23,7 @@ body {
 .welcome button {
   text-align: center;
 }
-.btn:hover {
-  background-color: var(--game-text);
-  color: var(--body-color);
-}
+
 .msg {
   width: 30%;
   text-align: center;
